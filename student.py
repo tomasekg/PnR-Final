@@ -61,10 +61,10 @@ class Piggy(pigo.Pigo):
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
         self.encF(20)
-        self.encR(180)
-        self.encL(180)
+        self.encR(25)
+        self.encL(25)
         self.widescan()
-        self.encB(18)
+        self.encB(20)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
