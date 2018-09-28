@@ -63,7 +63,6 @@ class Piggy(pigo.Pigo):
         self.encF(20)
         self.encR(25)
         self.encL(25)
-        self.encB(20)
         self.servo(120)
         self.servo(60)
 
