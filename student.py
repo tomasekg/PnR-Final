@@ -65,6 +65,24 @@ class Piggy(pigo.Pigo):
         self.encL(25)
         self.servo(120)
         self.servo(60)
+        self.shake()
+        self.swerve()
+        self.foward_and_back()
+
+    def shake(self):
+        for x in range(3):
+            self.encR(5)
+            self.encL(5)
+
+    def swerve(self):
+        for x in range(2):
+            self.encF(10)
+            self.encR(4)
+
+    def foward_and_back(self):
+        for x in range(2):
+            self.encF(8)
+            self.encB(8)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
