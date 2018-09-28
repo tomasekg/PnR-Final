@@ -60,9 +60,9 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-        self.encF(18)
-        self.encR(6)
-        self.encL(6)
+        self.encF(20)
+        self.encR(180)
+        self.encL(180)
         self.widescan()
         self.encB(18)
 
