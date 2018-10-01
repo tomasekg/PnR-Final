@@ -68,6 +68,7 @@ class Piggy(pigo.Pigo):
         self.shake()
         self.swerve()
         self.forward_and_back()
+        self.surprise()
 
     def shake(self):
         """I want the robot to shake right and left quickly"""
@@ -87,6 +88,14 @@ class Piggy(pigo.Pigo):
         for x in range(2):
             self.encF(8)
             self.encB(8)
+
+    def surprise(self):
+        for x in range(2):
+            self.encF(30)
+            self.encL(5)
+            self.encB(5)
+            self.encR(10)
+            self.encB(5)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
