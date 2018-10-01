@@ -45,10 +45,10 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
                 "s": ("Check status", self.status),
-                "q": ("Quit", quit_now)
-                "f": ("Forward", self.move_straight)
-                "r": ("Right", self.move_right)
-                "l": ("Left", self.move_left)
+                "q": ("Quit", quit_now),
+                "f": ("Forward", self.move_straight),
+                "r": ("Right", self.move_right),
+                "l": ("Left", self.move_left),
                 "b": ("Back", self.move_back)
                 }
         # loop and print the menu...
