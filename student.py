@@ -46,6 +46,10 @@ class Piggy(pigo.Pigo):
                 "c": ("Calibrate", self.calibrate),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit_now)
+                "f": ("Forward", self.move_straight)
+                "r": ("Right", self.move_right)
+                "l": ("Left", self.move_left)
+                "b": ("Back", self.move_back)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -54,6 +58,18 @@ class Piggy(pigo.Pigo):
         ans = raw_input("Your selection: ")
         # activate the item selected
         menu.get(ans, [None, error])[1]()
+
+    def move_straight(self):
+        self.encF(int(input("How far forward?: ")))
+
+    def move_right(self):
+        self.encR(int(input("How far right?: ")))
+
+    def move_left(self):
+        self.encL(int(input("How far left?: ")))
+
+    def move_back(self):
+        self.encB(int(input("How far back?: ")))
 
     # YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
