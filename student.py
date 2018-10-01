@@ -67,19 +67,23 @@ class Piggy(pigo.Pigo):
         self.servo(60)
         self.shake()
         self.swerve()
-        self.foward_and_back()
+        self.forward_and_back()
 
     def shake(self):
+        """I want the robot to shake right and left quickly"""
         for x in range(3):
             self.encR(5)
             self.encL(5)
 
     def swerve(self):
-        for x in range(2):
-            self.encF(10)
-            self.encR(4)
+        """The robot will go forward and turn right"""
+        self.encF(10)
+        self.encR(20)
+        self.encF(10)
+        self.encL(20)
 
-    def foward_and_back(self):
+    def forward_and_back(self):
+        """The robot will go back and forth"""
         for x in range(2):
             self.encF(8)
             self.encB(8)
