@@ -129,6 +129,14 @@ class Piggy(pigo.Pigo):
             self.encB(5)
             self.encR(10)
             self.encB(5)
+            self.encL(5)
+            self.encB(5)
+            self.encR(10)
+            self.encB(5)
+            self.encL(5)
+            self.encB(5)
+            self.encR(10)
+            self.encB(5)
 
 
     def obstacle_count(self):
