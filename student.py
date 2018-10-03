@@ -76,18 +76,18 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         if not self.safe_to_dance():
             print("\n---- NOT SAFE TO DANCE ----\n")
-            return
-        print("\n---- LET'S DANCE ----\n")
+        if self.safe_to_dance():
+            print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-        self.encF(20)
-        self.encR(25)
-        self.encL(25)
-        self.servo(120)
-        self.servo(60)
-        self.shake()
-        self.swerve()
-        self.forward_and_back()
-        self.surprise()
+            self.encF(20)
+            self.encR(25)
+            self.encL(25)
+            self.servo(120)
+            self.servo(60)
+            self.shake()
+            self.swerve()
+            self.forward_and_back()
+            self.surprise()
 
     def safe_to_dance(self):
         """circles around and checks for any obstacle"""
