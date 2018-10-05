@@ -88,7 +88,7 @@ class Piggy(pigo.Pigo):
             self.swerve()
             self.forward_and_back()
             self.surprise()
-
+            self.wheelie()
     def safe_to_dance(self):
         """circles around and checks for any obstacle"""
         # check for problems
@@ -137,6 +137,12 @@ class Piggy(pigo.Pigo):
             self.encB(5)
             self.encR(10)
             self.encB(5)
+
+    def wheelie(self):
+        self.set_speed(255, 255)
+        self.encF(30)
+        self.encB(60)
+        self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
 
 
     def obstacle_count(self):
