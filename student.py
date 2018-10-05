@@ -150,8 +150,8 @@ class Piggy(pigo.Pigo):
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
 
     def final_move(self):
-        for x in range(110, 30, 5)
-        self.servo(x)
+        for x in range(110, 30, 5):
+            self.servo(x)
 
 
     def obstacle_count(self):
