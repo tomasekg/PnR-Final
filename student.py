@@ -98,6 +98,7 @@ class Piggy(pigo.Pigo):
         return True
 
     def twist(self):
+        """the robot goes forward and swivels then moves its head"""
         self.encF(20)
         self.encR(25)
         self.encL(25)
@@ -124,6 +125,7 @@ class Piggy(pigo.Pigo):
             self.encB(8)
 
     def surprise(self):
+        """the robot will move foward and back up in increments"""
         for x in range(2):
             self.encF(30)
             self.encL(5)
@@ -144,12 +146,14 @@ class Piggy(pigo.Pigo):
             self.encB(5)
 
     def wheelie(self):
+        """the idea was that the robot would make a wheelie quickly while going backwards"""
         self.set_speed(255, 255)
         self.encF(50)
         self.encB(100)
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
 
     def final_move(self):
+        """just a simple swivel of the head"""
         for x in range(110, 30, -5):
             self.servo(x)
 
