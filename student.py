@@ -140,8 +140,8 @@ class Piggy(pigo.Pigo):
 
     def wheelie(self):
         self.set_speed(255, 255)
-        self.encF(30)
-        self.encB(60)
+        self.encF(50)
+        self.encB(100)
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
 
 
