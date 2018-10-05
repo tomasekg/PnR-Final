@@ -79,16 +79,14 @@ class Piggy(pigo.Pigo):
         if self.safe_to_dance():
             print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
-            self.encF(20)
-            self.encR(25)
-            self.encL(25)
-            self.servo(120)
-            self.servo(60)
+            self.twist()
             self.shake()
             self.swerve()
             self.forward_and_back()
             self.surprise()
             self.wheelie()
+            self.final_move()
+
     def safe_to_dance(self):
         """circles around and checks for any obstacle"""
         # check for problems
@@ -98,6 +96,13 @@ class Piggy(pigo.Pigo):
             self.encR(7) # is this 90 deg?
         # if we find no problems:
         return True
+
+    def twist(self):
+        self.encF(20)
+        self.encR(25)
+        self.encL(25)
+        self.servo(120)
+        self.servo(60)
 
     def shake(self):
         """I want the robot to shake right and left quickly"""
@@ -143,6 +148,10 @@ class Piggy(pigo.Pigo):
         self.encF(50)
         self.encB(100)
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
+
+    def final_move(self):
+        for x in range(110, 30, 5)
+        self.servo(x)
 
 
     def obstacle_count(self):
