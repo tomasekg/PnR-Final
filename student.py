@@ -146,7 +146,7 @@ class Piggy(pigo.Pigo):
             self.encB(5)
             self.encR(10)
             self.encB(5)
-
+# FROM RICKY ROBERTO
     def x_up(self):
         """supposed to make an X formation"""
         for x in range(4):
@@ -165,7 +165,7 @@ class Piggy(pigo.Pigo):
         self.encF(50)
         self.encB(100)
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
-
+# FROM COLE
     def s_curve_dance(self):
         self.fwd()
         self.set_speed(200,200)
