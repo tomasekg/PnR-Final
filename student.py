@@ -87,6 +87,7 @@ class Piggy(pigo.Pigo):
             self.wheelie()
             self.s_curve_dance()
             self.final_move()
+            self.x_up()
 
     def safe_to_dance(self):
         """circles around and checks for any obstacle"""
@@ -145,6 +146,18 @@ class Piggy(pigo.Pigo):
             self.encB(5)
             self.encR(10)
             self.encB(5)
+
+    def x_up(self):
+        """supposed to make an X formation"""
+        for x in range(4):
+            self.encB(9)
+            self.encR(2)
+            self.encF(9)
+            self.encL(2)
+            self.encB(9)
+            self.encL(2)
+            self.encF(9)
+            self.encR(2)
 
     def wheelie(self):
         """the idea was that the robot would make a wheelie quickly while going backwards"""
