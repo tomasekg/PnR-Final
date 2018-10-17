@@ -69,9 +69,11 @@ class Piggy(pigo.Pigo):
                 self.encL(5)
                 self.encR(5)
                 self.encF(10)
+                self.encR(18)
                 for x in range(150, 30, -5):
                     self.servo(x)
-                self.stop()
+                self.servo(MIDPOINT)
+                self.encF(5)
             time.sleep(.1)
 
     def move_straight(self):
