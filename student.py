@@ -45,6 +45,7 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
                 "s": ("Check status", self.status),
+                "h": ("Open House", self.open_house),
                 "q": ("Quit", quit_now),
                 "f": ("Forward", self.move_straight),
                 "r": ("Right", self.move_right),
@@ -58,6 +59,13 @@ class Piggy(pigo.Pigo):
         ans = raw_input("Your selection: ")
         # activate the item selected
         menu.get(ans, [None, error])[1]()
+
+    def open_house(self):
+        """reacts to distant measurement in front of it"""
+        while True:
+            if self.dist() < 20:
+                self.encR(5)
+            time.sleep(.1)
 
     def move_straight(self):
         self.encF(int(input("How far forward?: ")))
