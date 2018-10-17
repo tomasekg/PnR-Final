@@ -64,7 +64,9 @@ class Piggy(pigo.Pigo):
         """reacts to distant measurement in front of it"""
         while True:
             if self.dist() < 20:
+                self.encB(10)
                 self.encR(5)
+                self.encL(8)
             time.sleep(.1)
 
     def move_straight(self):
