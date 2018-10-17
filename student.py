@@ -67,7 +67,7 @@ class Piggy(pigo.Pigo):
                 self.encB(10)
                 self.encR(5)
                 self.encL(5)
-                for x in range(120, 40, -5):
+                for x in range(150, 30, -5):
                     self.servo(x)
             time.sleep(.1)
 
