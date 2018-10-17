@@ -74,6 +74,8 @@ class Piggy(pigo.Pigo):
                     self.servo(x)
                 self.servo(self.MIDPOINT)
                 self.encF(5)
+                self.encR(5)
+                self.encL(5)
             time.sleep(.1)
 
     def move_straight(self):
