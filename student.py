@@ -91,8 +91,10 @@ class Piggy(pigo.Pigo):
                 # turn left
                 self.encL(6)
         else:
-            # turns until clear
-            pass
+            print("I'll keep turning util it's clear, buddy")
+            #while it's not clear
+                #turn
+
 
 
     def open_house(self):
