@@ -96,6 +96,7 @@ class Piggy(pigo.Pigo):
                 if not self.is_clear():
                    self.encR(7)
                 else:
+                    self.encF(10)
                     break
 
 
