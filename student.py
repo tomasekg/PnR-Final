@@ -91,7 +91,7 @@ class Piggy(pigo.Pigo):
                 # turn left
                 self.encL(6)
         else:
-            print("I'll keep turning util it's clear, buddy")
+            print("\n\nI'll keep turning util it's clear, buddy\n\n")
             for x in range(4):
                 if not self.is_clear():
                    self.encR(7)
