@@ -92,9 +92,11 @@ class Piggy(pigo.Pigo):
                 self.encL(6)
         else:
             print("I'll keep turning util it's clear, buddy")
-            #while it's not clear
-                #turn
-
+            for x in range(4):
+                if not self.is_clear():
+                   self.encR(7)
+                else:
+                    break
 
 
     def open_house(self):
