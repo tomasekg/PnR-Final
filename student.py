@@ -311,8 +311,7 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             else:
-                # encR(10) was too much so i lowered it
-                self.encR(7)
+                self.choose_direction()
 
     def cruise(self):
         """ drive straight while path is clear """
@@ -373,7 +372,8 @@ class Piggy(pigo.Pigo):
             # if left is bigger:
             else:
                 # turn left
-                self.encR(6)
+                self.encR(7)
+            return True
 ####################################################
 ############### STATIC FUNCTIONS
 
