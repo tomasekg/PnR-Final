@@ -348,32 +348,29 @@ class Piggy(pigo.Pigo):
         """ lets you choose the direction that it goes once it stops and scans """
         choice = raw_input("Left/Right or Turn Until Clear?")
 
-        if "L" in choice:
-            self.wide_scan() #scan the area
-            # picks left or right
+        self.wide_scan() #scan the area
+        # picks left or right
 
-            # create two variables, left_total and right_total
-            left_total = 0
-            right_total = 0
-            # loop from self.MIDPOINT - 60 to self.MIDPOINT
-            for angle in range(self.MIDPOINT - 60, self.MIDPOINT):
-                if self.scan[angle]:
-                    # add up the numbers to right_total
-                    right_total += self.scan[angle]
-            # loop from self.MIDPOINT to self.MIDPOINT + 60
-            for angle in range(self.MIDPOINT, self.MIDPOINT + 60):
-                if self.scan[angle]:
-                # add up the numbers to left_total
-                    left_total += self.scan[angle]
-            # if right is bigger:
-            if right_total > left_total:
-                # turn right
-                self.encR(6)
-            # if left is bigger:
-            else:
-                # turn left
-                self.encR(7)
-            return True
+        # create two variables, left_total and right_total
+        left_total = 0
+        right_total = 0
+        # loop from self.MIDPOINT - 60 to self.MIDPOINT
+        for angle in range(self.MIDPOINT - 60, self.MIDPOINT):
+            if self.scan[angle]:
+                # add up the numbers to right_total
+                right_total += self.scan[angle]
+        # loop from self.MIDPOINT to self.MIDPOINT + 60
+        for angle in range(self.MIDPOINT, self.MIDPOINT + 60):
+            if self.scan[angle]:
+            # add up the numbers to left_total
+                left_total += self.scan[angle]
+        # if right is bigger:
+        if right_total > left_total:
+            # turn right
+            self.encR(6)
+        # if left is bigger:
+        return True
+
 ####################################################
 ############### STATIC FUNCTIONS
 
