@@ -54,7 +54,8 @@ class Piggy(pigo.Pigo):
                 "f": ("Forward", self.move_straight),
                 "r": ("Right", self.move_right),
                 "l": ("Left", self.move_left),
-                "b": ("Back", self.move_back)
+                "b": ("Back", self.move_back),
+                "L": ("Left",  self.move_left)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -344,6 +345,35 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT)
         return True
 
+    def choose_direction(self):
+        """ lets you choose the direction that it goes once it stops and scans """
+        choice = raw_input("Left/Right or Turn Until Clear?")
+
+        if "L" in choice:
+            self.wide_scan() #scan the area
+            # picks left or right
+
+            # create two variables, left_total and right_total
+            left_total = 0
+            right_total = 0
+            # loop from self.MIDPOINT - 60 to self.MIDPOINT
+            for angle in range(self.MIDPOINT - 60, self.MIDPOINT):
+                if self.scan[angle]:
+                    # add up the numbers to right_total
+                    right_total += self.scan[angle]
+            # loop from self.MIDPOINT to self.MIDPOINT + 60
+            for angle in range(self.MIDPOINT, self.MIDPOINT + 60):
+                if self.scan[angle]:
+                # add up the numbers to left_total
+                    left_total += self.scan[angle]
+            # if right is bigger:
+            if right_total > left_total:
+                # turn right
+                self.encR(6)
+            # if left is bigger:
+            else:
+                # turn left
+                self.encR(6)
 ####################################################
 ############### STATIC FUNCTIONS
 
