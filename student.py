@@ -19,9 +19,10 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 74
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.SAFE_STOP_DIST = 40
+        self.SAFE_STOP_DIST = 35
         # I changed the safe stop distance to a little higher just to test out
         # tried changing again
+        # lowered it back to what i had
         self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 125
@@ -320,6 +321,28 @@ class Piggy(pigo.Pigo):
             time.sleep(.2)
 
         self.stop()
+
+    def is_clear(self):
+        """does a 3-point scan around the midpoint, returns false if a test fails"""
+        # added this into my student.py to enlarge the view range
+        print("Running the is_clear method.")
+        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 5):
+            self.servo(x)
+            scan1 = self.dist()
+            # double check the distance
+            scan2 = self.dist()
+            # if I found a different distance the second time....
+            if abs(scan1 - scan2) > 2:
+                scan3 = self.dist()
+                # take another scan and average the three together
+                scan1 = (scan1 + scan2 + scan3) / 3
+            self.scan[x] = scan1
+            print("Degree: " + str(x) + ", distance: " + str(scan1))
+            if scan1 < self.SAFE_STOP_DIST:
+                print("Doesn't look clear to me")
+                return False
+        return True
+
 ####################################################
 ############### STATIC FUNCTIONS
 
