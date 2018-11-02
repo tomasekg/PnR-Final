@@ -383,6 +383,9 @@ class Piggy(pigo.Pigo):
             # turn right
             self.encR(6)
         # if left is bigger:
+        if left_total > right_total:
+            # turn left
+            self.encL(6)
         return True
 
 ####################################################
