@@ -346,7 +346,6 @@ class Piggy(pigo.Pigo):
 
     def choose_direction(self):
         """ lets you choose the direction that it goes once it stops and scans """
-        choice = raw_input("Left/Right or Turn Until Clear?")
 
         self.wide_scan() #scan the area
         # picks left or right
