@@ -46,20 +46,7 @@ class Pigo(object):
         ans = raw_input("Your selection: ")
         menu.get(ans, [None, error])[1]()
 
-    def open_house(self):
-        """Cute demo used for open house"""
-        choice = raw_input("1) Shy;  2) Spin.. ")
-        if choice == "1":
-            while True:
-                if not self.is_clear():
-                    self.beShy()
-        else:
-            while True:
-                if not self.is_clear():
-                    for x in range(5):
-                        self.encR(2)
-                        self.encL(2)
-                    self.encR(15)
+
 
     def beShy(self):
         """animates a shy withdrawal"""

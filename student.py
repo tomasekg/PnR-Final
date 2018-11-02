@@ -313,6 +313,21 @@ class Piggy(pigo.Pigo):
             else:
                 self.choose_direction()
 
+    def open_house(self):
+        """Cute demo used for open house"""
+        choice = raw_input("1) Shy;  2) Spin.. ")
+        if choice == "1":
+            while True:
+                if not self.is_clear():
+                    self.beShy()
+        else:
+            while True:
+                if not self.is_clear():
+                    for x in range(5):
+                        self.encR(2)
+                        self.encL(2)
+                    self.encR(15)
+
     def cruise(self):
         """ drive straight while path is clear """
         self.fwd()
