@@ -333,7 +333,7 @@ class Piggy(pigo.Pigo):
         self.fwd()
         while self.dist() > self.SAFE_STOP_DIST:
             # .5 seconds seems to short of a stopping distance....had to change it...realized I made it more time between
-            time.sleep(.2)
+            time.sleep(.1)
 
         self.stop()
 
@@ -341,7 +341,7 @@ class Piggy(pigo.Pigo):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         # added this into my student.py to enlarge the view range
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 8):
+        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 6):
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
