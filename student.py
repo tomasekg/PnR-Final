@@ -19,7 +19,7 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 78
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.SAFE_STOP_DIST = 25
+        self.SAFE_STOP_DIST = 30
         # I changed the safe stop distance to a little higher just to test out
         # tried changing again
         # lowered it back to what i had
@@ -333,7 +333,7 @@ class Piggy(pigo.Pigo):
         self.fwd()
         while self.dist() > self.SAFE_STOP_DIST:
             # .5 seconds seems to short of a stopping distance....had to change it...realized I made it more time between
-            time.sleep(.1)
+            time.sleep(.05)
 
         self.stop()
 
