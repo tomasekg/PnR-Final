@@ -121,7 +121,7 @@ class Piggy(pigo.Pigo):
                 self.encF(5)
                 self.encR(5)
                 self.encL(5)
-            time.sleep(.1)
+            time.sleep(.01)
 
     def move_straight(self):
         self.encF(int(input("How far forward?: ")))
