@@ -386,16 +386,27 @@ class Piggy(pigo.Pigo):
             if self.scan[angle]:
             # add up the numbers to left_total
                 left_total += self.scan[angle]
+        # check if no turn is necessary
+        if self.is_clear_infront():
+            self.cruise()
         # if right is bigger:
-        if right_total > left_total:
+        elif right_total > left_total:
             # turn right
             self.encR(4)
         # if left is bigger:
-        if left_total > right_total:
+        elif left_total > right_total:
             # turn left
             self.encL(4)
             # is this too much? same with encR....
         return True
+
+    def is_clear_infront(self):
+        """checks the scan array to see if there's a path in front easier to take"""
+
+        # check for obstacles
+        for ang in range(self.MIDPOINT - 10, self.MIDPOINT + 10):
+            if self.scan[ang] and self.scan[ang] < self.SAFE_STOP_DIST:
+                return False
 
 ####################################################
 ############### STATIC FUNCTIONS
