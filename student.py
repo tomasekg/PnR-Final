@@ -19,7 +19,7 @@ class Piggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 87
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.SAFE_STOP_DIST = 32
+        self.SAFE_STOP_DIST = 30
         # I changed the safe stop distance to a little higher just to test out
         # tried changing again
         # lowered it back to what i had
