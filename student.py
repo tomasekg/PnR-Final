@@ -25,9 +25,9 @@ class Piggy(pigo.Pigo):
         # lowered it back to what i had
         self.HARD_STOP_DIST = 20
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 115
+        self.LEFT_SPEED = 110
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 120
+        self.RIGHT_SPEED = 115
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -59,7 +59,7 @@ class Piggy(pigo.Pigo):
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
-            print(key + ":" + menu[key][0])
+            print(key + ":" + menu[y][0])
         # store the user's answer
         ans = raw_input("Your selection: ")
         # activate the item selected
