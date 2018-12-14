@@ -124,15 +124,19 @@ class Piggy(pigo.Pigo):
             time.sleep(.01)
 
     def move_straight(self):
+        """Will manually allow you to determine how far it moves forward"""
         self.encF(int(input("How far forward?: ")))
 
     def move_right(self):
+        """manually allows you to turn it right"""
         self.encR(int(input("How far right?: ")))
 
     def move_left(self):
+        """manually lets you turn the robot left"""
         self.encL(int(input("How far left?: ")))
 
     def move_back(self):
+        """manually allows you to back up the robot"""
         self.encB(int(input("How far back?: ")))
 
     # YOU DECIDE: How does your GoPiggy dance?
@@ -231,6 +235,7 @@ class Piggy(pigo.Pigo):
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
 # FROM COLE
     def s_curve_dance(self):
+        """I stole this s curve dance from Cole and it's sweet"""
         self.fwd()
         self.set_speed(200,200)
         time.sleep(.5)
