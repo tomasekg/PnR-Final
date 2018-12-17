@@ -354,7 +354,7 @@ class Piggy(pigo.Pigo):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         # added this into my student.py to enlarge the view range
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 6):
+        for x in range((self.MIDPOINT - 35), (self.MIDPOINT + 35), 5):
             self.servo(x)
             scan1 = self.dist()
             # double check the distance
